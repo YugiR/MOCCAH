@@ -13,7 +13,7 @@ from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 
 
-ascii_banner = pyfiglet.figlet_format("MOCCAH SCANNER")
+ascii_banner = pyfiglet.figlet_format("MOCCAH")
 print(ascii_banner)
 print("Created by @Yugi")
 print("Menu hacking: ")
