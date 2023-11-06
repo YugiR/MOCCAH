@@ -4,9 +4,9 @@ Ini adalah tool gabungan dari beberapa tools Web Scanning Vulnerability dan OSIN
 
 # Instalasi & Running
 - Linux
-$ sudo git clone https://github.com/YugiR/MOCCAH
-$ cd MOCCAH
-$ python3 MOCCAH.py
+sudo git clone https://github.com/YugiR/MOCCAH
+cd MOCCAH
+python3 MOCCAH.py
 
 - Windows
   Download file MOCCAH.py dan jalankan di dalam Text Editor
