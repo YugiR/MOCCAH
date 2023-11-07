@@ -11,6 +11,8 @@ $ cd MOCCAH
 
 $ pip install folium (bila terjadi error saat running)
 
+$ pip install opencage (bila terjadi error saat running)
+
 $ python3 MOCCAH.py
 
 - Windows
