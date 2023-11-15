@@ -9,15 +9,15 @@ $ sudo git clone https://github.com/YugiR/MOCCAH.git
 
 $ cd MOCCAH
 
-$ pip install folium (bila terjadi error saat running)
+$ pip install folium (If an error occurs during the running process)
 
-$ pip install opencage (bila terjadi error saat running)
+$ pip install opencage (If an error occurs during the running process)
 
 $ python3 MOCCAH.py
 
 - Windows
-  
-  Download file MOCCAH.py dan jalankan di dalam Text Editor. pastikan Windows tersebut sudah terinstall python didalamnya dan sudah menginstall library python yang di perlukan
+
+Download the MOCCAH.py file and run it in a Text Editor. Ensure that Python is installed on the Windows system, and the required Python libraries are installed.
 
 
 Thanks :))
