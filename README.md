@@ -1,6 +1,6 @@
 # MOCCAH
 
-Ini adalah tool gabungan dari beberapa tools Web Scanning Vulnerability dan OSINT, MOCCAH dapat berjalan di OS Windows dan Linux. MOCCAH di buat dengan full bahasa Python
+It is a combined tool incorporating various Web Scanning Vulnerability and OSINT tools. MOCCAH is designed to run on both Windows and Linux operating systems. It is developed entirely in the Python programming language.
 
 # Instalasi & Running
 - Linux
@@ -20,6 +20,5 @@ $ python3 MOCCAH.py
   Download file MOCCAH.py dan jalankan di dalam Text Editor. pastikan Windows tersebut sudah terinstall python didalamnya dan sudah menginstall library python yang di perlukan
 
 
-Terimakasih :))
+Thanks :))
 
- jangan lupa kasih testimoni dan bintang 5 yaaa!!!
