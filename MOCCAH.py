@@ -21,14 +21,14 @@ print("1. Information Gathering Pasif")
 print("2. scanning XSS Vulnerability")
 print("3. SQL injection scanner")
 print("4. SubDomain Scanner")
-print("5. Lacak lokasi No Telp")
+print("5. Track Location number")
 print("6. Port Scanner")
-pilih = int(input('Mau yang mana ?? '))
+pilih = int(input('which one do you want??? '))
 
 match pilih:
         case 1:
                 #mencari alamat dari domain
-                print ("Contoh : example.com")
+                print ("example : example.com")
                 host = input('Enter a domain name: ')
                 ip_address = socket.gethostbyname(host)
                 url = 'https://geolocation-db.com/jsonp/' + ip_address
@@ -41,20 +41,20 @@ match pilih:
                 
         case 2: 
                 #scanning xss
-                print ("Contoh : https://example.com/")
-                target = input("Masukan domain target : ")
+                print ("example : https://example.com/")
+                target = input("Enter a domain name : ")
 
                 payload = "<script>alert(xss);</script>"
                 req = requests.post(target + payload)
 
                 if payload in req.text:
-                        print ("XSS Vulnerability ditemukan!!!")
-                        print ("serangan payload: " + payload)
+                        print ("XSS Vulnerability Founds!!!")
+                        print ("Attack payload: " + payload)
                 else:
-                        print("Domain tidak ada celah XSS Vulnerability")
+                        print("Domain Secure")
         case 3:
-                print("contoh: https://example.com/")
-                domain = input("Masukan domain : ")
+                print("example: https://example.com/")
+                domain = input("Enter a domain name : ")
                 s = requests.Session()
                 s.headers["User-Agent"] = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
                 def get_forms(url):
@@ -79,9 +79,9 @@ match pilih:
                         detailsOfForm['inputs'] = inputs
                         return detailsOfForm
                 def vulnerable(response):
-                        errors = {"String yang dikutip tidak diakhiri dengan benar", 
-                                  "Tanda kutip tidak tertutup setelah string karakter",
-                                  "Ada eror di dalam syntax sqlinjection anda" 
+                        errors = {"The quoted string is not terminated properly", 
+                                  "Unclosed quotes after a character string",
+                                  "There is an error in your sqlinjection syntax" 
                                  }
                         for error in errors:
                             if error in response.content.decode().lower():
@@ -89,7 +89,7 @@ match pilih:
                         return False
                 def sql_injection_scan(url):
                         forms = get_forms(url)
-                        print(f"Ditemukan {len(forms)} di dalam url {url}.")
+                        print(f"Founds {len(forms)} In URL {url}.")
                         for form in forms:
                                 details = form_details(form)
                                 for i in "\"'":
@@ -106,16 +106,16 @@ match pilih:
                                         elif details["method"] == "get":
                                                 res = s.get(url, params=data)
                                         if vulnerable(res):
-                                                print("SQL injection di temukan!! ", url )
+                                                print("SQL injection its Found!! ", url )
                                         else:
-                                                print("Tidak terdapat SQL Injention vulnerability")
+                                                print("Domain secure")
                                                 break
                 if __name__ == "__main__":
                         urlToBeChecked = domain
                         sql_injection_scan(urlToBeChecked)     
         case 4:
-                print("contoh : example.com")
-                urlDomain = input("Masukan domain : ")
+                print("example : example.com")
+                urlDomain = input("Enter a domain name : ")
                 def find_subdomain(domain, timeout=3):
                         wordlist = [
                                 "admin",
@@ -151,8 +151,8 @@ match pilih:
                 timeout = 4
                 find_subdomain(domain, timeout)
         case 5:
-                print("contoh : +1234567890")
-                number = input("Masukan Nomer : ")
+                print("example : +1234567890")
+                number = input("Enter number : ")
                 pepnumber = phonenumbers.parse(number)
                 location = geocoder.description_for_number(pepnumber, "en")
                 print(location)
@@ -176,7 +176,7 @@ match pilih:
                 folium.Marker([lat, lng], popup=location).add_to(myMap)
                 
         case 6 :
-                print("contoh : 123.456.789")
+                print("example : 123.456.789")
                 target = input(str("Target IP : "))
                 print("_" * 50)
                 print("scanning Target: " + target)
