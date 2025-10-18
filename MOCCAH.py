@@ -21,8 +21,7 @@ print("1. Information Gathering Pasif")
 print("2. scanning XSS Vulnerability")
 print("3. SQL injection scanner")
 print("4. SubDomain Scanner")
-print("5. Track Location number")
-print("6. Port Scanner")
+print("5. Port Scanner")
 pilih = int(input('which one do you want??? '))
 
 match pilih:
@@ -150,32 +149,8 @@ match pilih:
                 domain = urlDomain
                 timeout = 4
                 find_subdomain(domain, timeout)
-        case 5:
-                print("example : +1234567890")
-                number = input("Enter number : ")
-                pepnumber = phonenumbers.parse(number)
-                location = geocoder.description_for_number(pepnumber, "en")
-                print(location)
-                
-                from phonenumbers import carrier
-                service_pro = phonenumbers.parse(number)
-                print(carrier.name_for_number(service_pro, "en"))
-
-                from opencage.geocoder import OpenCageGeocode
-                key = 'a92be551ba454746ae3f6166faa6f722'
-
-                geocoder = OpenCageGeocode(key)
-                query = str(location)
-                results = geocoder.geocode(query)
-                lat = results[0]['geometry']['lat']
-                lng = results[0]['geometry']['lng']
-
-                print(lat, lng)
-
-                myMap = folium.Map(location=[lat, lng], zoom_start=9)
-                folium.Marker([lat, lng], popup=location).add_to(myMap)
-                
-        case 6 :
+       
+        case 5 :
                 print("example : 123.456.789")
                 target = input(str("Target IP : "))
                 print("_" * 50)
@@ -198,3 +173,4 @@ match pilih:
                 except socket.error:
                         print("\ Host tidak terhubung :(")
                         sys.exit()
+
